@@ -2,6 +2,7 @@ package fr.marchello.repository;
 
 import fr.marchello.entity.Message;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.Date;
 import java.util.List;
@@ -16,4 +17,6 @@ public interface MessageRepository extends JpaRepository<Message, Integer>{
     List<Message> findAllByDate(Date date);
 
     Optional<Message> findById(Integer Id);
+
+    List<Message> findAll();
 }
