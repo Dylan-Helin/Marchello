@@ -55,6 +55,16 @@ public class Message {
         this.date = date;
     }
 
+    @Override
+    public String toString() {
+        return "Message{" +
+                "id=" + id +
+                ", message='" + message + '\'' +
+                ", senderName='" + senderName + '\'' +
+                ", date=" + date +
+                '}';
+    }
+
     /**
      * Set the date to a format without hours, minutes and seconds.
      */

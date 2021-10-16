@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -22,7 +23,7 @@ public class MessageController {
      * @return "Message created successfully" if the message is created.
      */
     @PostMapping("messages")
-    public String createMessage(@RequestBody Message message){
+    public String createMessage(@RequestBody Message message) throws IOException {
         return messageService.createMessage(message);
     }
 
