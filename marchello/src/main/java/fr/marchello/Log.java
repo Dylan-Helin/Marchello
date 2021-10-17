@@ -11,10 +11,10 @@ public class Log {
     FileHandler fh;
 
     public Log(String file_name) throws SecurityException, IOException {
-        File f = new File(file_name);
+        /*File f = new File(file_name);
         if(!f.exists()){
             f.createNewFile();
-        }
+        }*/
         fh = new FileHandler(file_name,true);
         logger = Logger.getLogger("Marchello");
         logger.addHandler(fh);

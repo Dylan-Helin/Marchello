@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 
 @SpringBootApplication
 public class MarchelloApplication {
+	public Log log;
 
 	public static void main(String[] args) {
 		try {
@@ -25,7 +26,6 @@ public class MarchelloApplication {
 	@PreDestroy
 	public void preDestroy() {
 		try {
-			Log log = new Log("log.txt");
 			log.logger.info("Shuting down Marchello");
 		}catch (Exception e){
 
