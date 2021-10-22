@@ -1,9 +1,15 @@
 $<template>
   <div>
-    <router-link :to="{path: '/'}">
+    <router-link
+      class="test"
+      :to="{path: '/'}"
+    >
       Discussion
     </router-link>
-    <router-link :to="{path: '/memory'}">
+    <router-link
+      class="test"
+      :to="{path: '/memory'}"
+    >
       souvenirs de Marchello
     </router-link>
   </div>
@@ -14,7 +20,9 @@ export default {
   name: 'MarchelloHeader'
 };
 </script>
-
-<style scoped>
-
+<style lang="scss">
+  .test:hover {
+    transition: 0.5s;
+    color: #42b983;
+  };
 </style>

@@ -7,6 +7,7 @@ import fr.marchello.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.transaction.Transactional;
 import java.io.IOException;
@@ -28,6 +29,22 @@ public class MessageService {
             message.fixDate();
             messageRepository.save(message);
             log.logger.info("created : " + message.toString());
+            log.close();
+            return "Message created successfully";
+        }catch (Exception e){
+            throw e;
+        }
+    }
+
+    @Transactional
+    public String createMessage(String senderName, String message, Date date) throws IOException {
+        try {
+            Log log = new Log("log.txt");
+            Message m = new Message(message,senderName,date);
+            m.fixDate();
+            messageRepository.save(m);
+            log.logger.info("created : " + message.toString());
+            log.close();
             return "Message created successfully";
         }catch (Exception e){
             throw e;
@@ -41,6 +58,7 @@ public class MessageService {
             try {
                 Log log = new Log("log.txt");
                 log.logger.info("sent : " + m.toString());
+                log.close();
             }catch (Exception e){
 
             }
@@ -55,6 +73,7 @@ public class MessageService {
             try {
                 Log log = new Log("log.txt");
                 log.logger.info("sent : " + m.toString());
+                log.close();
             }catch (Exception e){
 
             }
@@ -69,6 +88,7 @@ public class MessageService {
             try {
                 Log log = new Log("log.txt");
                 log.logger.info("sent : " + m.toString());
+                log.close();
             }catch (Exception e){
 
             }
@@ -83,6 +103,7 @@ public class MessageService {
             try {
                 Log log = new Log("log.txt");
                 log.logger.info("sent : " + m.toString());
+                log.close();
             }catch (Exception e){
 
             }
@@ -96,6 +117,7 @@ public class MessageService {
             try {
                 Log log = new Log("log.txt");
                 log.logger.info("sent : " + result.toString());
+                log.close();
             }catch (Exception e){
 
             }

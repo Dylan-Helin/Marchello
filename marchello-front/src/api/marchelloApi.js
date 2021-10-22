@@ -5,9 +5,6 @@ export default {
   getAllMessage() {
     return Vue.http.get(`${BASE_URL}`);
   },
-  getMessage(id) {
-    return Vue.http.get(`${BASE_URL}/${id}`);
-  },
   createMessage(message) {
     return Vue.http.post(`${BASE_URL}`, {
       ...message

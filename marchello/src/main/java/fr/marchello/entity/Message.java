@@ -23,6 +23,12 @@ public class Message {
     public Message() {
     }
 
+    public Message(String message, String senderName, Date date) {
+        this.message = message;
+        this.senderName = senderName;
+        this.date = date;
+    }
+
     public int getId() {
         return id;
     }

@@ -17,10 +17,10 @@
             {{ message.senderName | upperCaseFilter }}
           </td>
           <td>
-            {{ sender.message }}
+            {{ message.message }}
           </td>
           <td>
-            {{ sender.date }}
+            {{ message.date }}
           </td>
         </tr>
       </tbody>
@@ -34,14 +34,14 @@ export default {
   name: 'MarchelloMemory',
   data() {
     return {
-      messages: []
+      messages: ''
     };
   },
   methods: {
     async getAllMessages() {
       try {
         const response = await marchelloApi.getAllMessage();
-        this.messages = response.body.content;
+        this.messages = response.body;
       } catch (error) {
         console.error('Marchello à un trou de mémoire');
       }
@@ -52,7 +52,17 @@ export default {
   }
 };
 </script>
-
 <style scoped>
-
+th
+{
+color: #B6FFF6;
+}
+table
+{
+margin: auto;
+}
+td
+{
+text-align :center;
+}
 </style>

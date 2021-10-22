@@ -15,9 +15,13 @@ public class Log {
         if(!f.exists()){
             f.createNewFile();
         }*/
-        fh = new FileHandler(file_name,true);
+        fh = new FileHandler(file_name, true);
         logger = Logger.getLogger("Marchello");
         logger.addHandler(fh);
         fh.setFormatter(new SimpleFormatter());
+    }
+
+    public void close(){
+        fh.close();
     }
 }
