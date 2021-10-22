@@ -10,7 +10,7 @@ $<template>
       class="test"
       :to="{path: '/memory'}"
     >
-      souvenirs de Marchello
+      Souvenirs de Marchello
     </router-link>
   </div>
 </template>

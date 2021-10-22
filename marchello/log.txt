@@ -1192,3 +1192,5 @@ oct. 22, 2021 5:31:04 PM fr.marchello.service.MessageService createMessage
 INFO: created : Message{id=65, message='On me dit le plus grand bien des harengs pomme-à-l’huile', senderName='Roberto', date=Fri Oct 22 00:00:00 CEST 2021}
 oct. 22, 2021 5:31:04 PM fr.marchello.service.MessageService createMessage
 INFO: created : Message{id=66, message='On me dit le plus grand bien des harengs pomme-à-l’huile', senderName='Marchello', date=Fri Oct 22 00:00:00 CEST 2021}
+oct. 22, 2021 6:12:04 PM fr.marchello.MarchelloApplication preDestroy
+INFO: Shuting down Marchello

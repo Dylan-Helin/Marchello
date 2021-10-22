@@ -1,0 +1,31 @@
+This project is made with Spring Boot and Vue.js
+
+I tried to use Docker but it didn't work properly on my device,
+Windows didn't bring allow me to put Marchello on Docker or to place my database (using MySQL) where I want.
+
+It didn't allow me to retrieve my database either, this why I can't bring it in the GitHub.
+
+To run this project, first you must open a MySQL at port 3307 (on your computer or on docker).
+Then run the Spring boot Marchello app by running the project on your favorite IDE or by lauching the jar located in the "marchello/target" folder.
+Once the spring boot app is running, you can start the vue.js app by typing "npm run serve" in a terminal launched in the "marchello-front" folder.
+You may need to remove "package-lock.json" and "node_modules" then do "npm install" before "npm run serve" in order to run Marchello properly.
+
+If you are using docker : (this is theorical and couldn't be tested)
+
+- create a network :
+docker network create marchello-net
+
+- create your database :
+docker run -p 3307:3307 --net marchello-net --name mysqldb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=db_marchello -v "path to your database folder":/var/lib/mysql mysql
+
+- create Marchello :
+(in the marchello folder)
+docker build -t marchello
+docker run -p 5000:5000 --net marchello-net --name marchello -e MYSQL_HOST=mysqldb marchello
+
+- create Marchello's Front :
+(in the marchello-front folder)
+docker build -t marchello-front
+docker run -p 8081:8081 --net marchello-net --name marchello-front marchello-front
+
+By doing so, Marchello should run as intended

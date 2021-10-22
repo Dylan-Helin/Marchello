@@ -1,3 +1,3 @@
-FROM openjdk:11-alpine
+FROM adoptopenjdk/openjdk11:ubi
 ADD target/Marchello.jar Marchello.jar
 ENTRYPOINT ["java","-jar","Marchello.jar"]
